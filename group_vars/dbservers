@@ -5,10 +5,10 @@ mysql_port: 3306
 dbuser: wp_user
 dbname: wordpress
 upassword: 24Uhb4Xq5R95FyvU
-masterpassword: 2F7F67kQkeWm4gJ6
+masterpassword: root
 
 # MySQL Settings
-mysql_root_password: 2F7F67kQkeWm4gJ6
+mysql_root_password: root
 mysql_db: wordpress
 mysql_user: wp_user
 mysql_password: 24Uhb4Xq5R95FyvU
