@@ -6,6 +6,6 @@ mysql_user: wp_user
 mysql_password: Bond@007
 
 # HTTP Settings
-http_host: epsi
-http_conf: epsi.conf
+http_host: html
+http_conf: html.conf
 http_port: 80

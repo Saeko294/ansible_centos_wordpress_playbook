@@ -22,6 +22,9 @@
 - include: copy_code.yml
 
 # WordPress Configuration
+- name: Suppression de la page par défaut de Apache
+  command: rm -rf /var/www/html
+
 - name: Création repertoire wordpress
   command: mkdir /var/www/{{ http_host }}
   
