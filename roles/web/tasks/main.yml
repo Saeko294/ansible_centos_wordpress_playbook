@@ -1,0 +1,49 @@
+---
+# Playbook for Web Server
+
+- name: Installer Apache et php
+  yum: name={{ item }} state=present
+  with_items:
+   - httpd
+   - php
+   - php-mysql
+
+- name: Installer paquet git
+  yum: name={{ item }} state=installed
+  with_items:
+   - git
+
+- name: Démarrer et activer le lancement automatique de Apache au démarrage
+  service: name=httpd state=started enabled=yes
+
+- name: Activer le Firewall sur le port 80
+  firewalld: port=80/tcp permanent=true state=enabled immediate=yes
+    
+- include: copy_code.yml
+
+# WordPress Configuration
+- name: Telecharger et decompresser la derniere version de wp
+  unarchive:
+    src: https://wordpress.org/latest.tar.gz
+    dest: "/var/www/{{ http_host }}"
+    remote_src: yes
+    creates: "/var/www/{{ http_host }}/wordpress"
+
+- name: Definir hote
+  file:
+    path: "/var/www/{{ http_host }}"
+    state: directory
+    recurse: yes
+    owner: www-data
+    group: www-data
+
+- name: Modifier les permissions pour les repertoires
+  shell: "/usr/bin/find /var/www/{{ http_host }}/wordpress/ -type d -exec chmod 750 {} \\;"
+
+- name: Modifier les permissions pour les fichiers
+  shell: "/usr/bin/find /var/www/{{ http_host }}/wordpress/ -type f -exec chmod 640 {} \\;"
+
+- name: Configuration du fichier config de wp
+  template:
+    src: "wp-config.php.j2"
+    dest: "/var/www/{{ http_host }}/wordpress/wp-config.php"
