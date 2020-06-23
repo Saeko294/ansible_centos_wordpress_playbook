@@ -22,6 +22,10 @@
 - include: copy_code.yml
 
 # WordPress Configuration
+- name: Création repertoire wordpress
+  command: mkdir /var/www/{{ http_host }}
+  
+
 - name: Telecharger et decompresser la derniere version de wp
   unarchive:
     src: https://wordpress.org/latest.tar.gz
