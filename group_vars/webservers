@@ -1,0 +1,11 @@
+---
+# MySQL Settings
+mysql_root_password: MySQL@007
+mysql_db: wordpress
+mysql_user: wp_user
+mysql_password: Bond@007
+
+# HTTP Settings
+http_host: epsi
+http_conf: epsi.conf
+http_port: 80
