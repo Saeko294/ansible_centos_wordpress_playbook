@@ -8,12 +8,12 @@ upassword: Z9jGP4a2u
 masterpassword: 2LYp52eiC
 
 # MySQL Settings
-mysql_root_password: "2LYp52eiC"
-mysql_db: "wordpress"
-mysql_user: "wp_user"
-mysql_password: "Z9jGP4a2u"
+mysql_root_password: 2LYp52eiC
+mysql_db: wordpress
+mysql_user: wp_user
+mysql_password: Z9jGP4a2u
 
-#HTTP Settings
-http_host: "epsi"
-http_conf: "epsi.conf"
-http_port: "80"
+# HTTP Settings
+http_host: epsi
+http_conf: epsi.conf
+http_port: 80
