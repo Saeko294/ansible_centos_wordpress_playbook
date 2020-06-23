@@ -4,14 +4,14 @@ mysqlservice: mysqld
 mysql_port: 3306
 dbuser: wp_user
 dbname: wordpress
-upassword: 7@m3LU4}iTbJj=)8
-masterpassword: 6@{P49x?_wCi7JaH
+upassword: 24Uhb4Xq5R95FyvU
+masterpassword: 2F7F67kQkeWm4gJ6
 
 # MySQL Settings
-mysql_root_password: 6@{P49x?_wCi7JaH
+mysql_root_password: 2F7F67kQkeWm4gJ6
 mysql_db: wordpress
 mysql_user: wp_user
-mysql_password: 7@m3LU4}iTbJj=)8
+mysql_password: 24Uhb4Xq5R95FyvU
 
 # HTTP Settings
 http_host: epsi
